@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="stylesheet"href="{{ url_for('static', path='/prompt.css') }}">
+  <script src="/static/js/main.js" defer></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineHeist</title>
+  
+</head>
+<body>
+
+  <div class="container">
+    <h1><b>CineHeist</b></h1>
+    <p><i>Your Movie Matchmaker</i></p>
+
+    <label for="movieSearch"><i>Enter your Synopsis:</i></label><br>
+    <textarea input type="text" id="movieSearch" placeholder="Design your Plot..." oninput="searchMovie(prompt)"></textarea><br>
+    <button onclick="window.location.href='/result/'">Search Movie</button>
+
+    <div id="recommendation">
+      <h2>Recommended Movie:</h2>
+      <p id="MovieTitle"></p>
+      <p id="MovieDescription"></p>
+    </div>
+    <script src="/static/js/main.js"></script>
+
+  
+</body>
+</html>

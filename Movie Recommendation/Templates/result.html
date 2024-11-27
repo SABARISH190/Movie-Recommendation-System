@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', path='/result.css') }}">
+    <script src="/static/js/main.js" defer></script>
+    <title>CineHeist</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Plot Matrimony</h1>
+        </header>
+        
+        <section id="filters" class="box">
+            <h2>Filter Movies</h2>
+            <label for="language">Language:</label>
+            <select id="language">
+                <option value="all">All</option>
+                <option value="english">English</option>
+                <option value="spanish">Spanish</option>
+                <option value="french">French</option>
+                <!-- Add more languages as needed -->
+            </select>
+
+            <label for="year">Year:</label>
+            <input type="number" id="year" placeholder="Enter Year" min="1900" max="2024">
+
+            <button onclick="filterMovies()">Filter</button>
+        </section>
+
+        <section id="sorting" class="box">
+            <h2>Sort Movies</h2>
+            <select id="sortOptions" onchange="sortMovies()">
+                <option value="rating">Sort by Rating</option>
+                <option value="year">Sort by Year</option>
+            </select>
+        </section>
+
+        <section id="results" class="box">
+            <h2>Results</h2>
+            <div class="movie-list" id="movieList">
+                <!-- Movie items will be dynamically added here -->
+                <!-- Example Movie Item -->
+                <div class="movie-item">
+                    <h3>Movie Title</h3>
+                    <p><strong>Synopsis:</strong> This is a brief synopsis of the movie.</p>
+                    <p><strong>Language:</strong> English</p>
+                    <p><strong>Year:</strong> 2023</p>
+                    <p><strong>Rating:</strong> ★★★★☆ (4/5)</p>
+                    <button onclick="openReviewPage()">View Reviews</button>
+                </div>
+                <!-- More movie items can be added dynamically -->
+            </div>
+        </section>
+
+        <section id="feedback" class="box">
+            <h2>Feedback</h2>
+            <button onclick="window.location.href='/feedback/'">feedback</button>
+            
+        </section>
+
+        <footer class="box">
+            <p>&copy; 2024 CineHeist</p>
+        </footer>
+    </div>
+    <script src="/static/js/main.js"></script>
+
+    
+</body>
+</html>
